@@ -15,7 +15,14 @@ body{
 }
 .mobile-container{
   background-color: white;
+  box-shadow: 0 0 10px 2px #3333331a;
+  border-radius: 3px;
+  overflow: hidden;
   width: 400px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 img{
   max-width: 100%;
@@ -41,7 +48,23 @@ header button{
 }
 .fav-container{
   padding: 1rem;
+  text-align: center;
 }
 .fav-meals{
   display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.fav-meals li{
+
+}
+.fav-meals li img{
+  border-radius: 50%;
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+}
+.meal-header img{
+  width: 100px;
+  height: auto;
 }
