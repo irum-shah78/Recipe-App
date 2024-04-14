@@ -37,12 +37,13 @@ header input{
   background-color: #eee;
   border: none;
   border-radius: 3px;
+  /* font-family: inherit; */
   padding: 0.5rem 1rem;
 }
 header button{
   background-color: transparent;
   border: none;
-  color: #aaa;
+  color: rgb(138, 129, 141);
   font-size: 1.5rem;
   margin-left: 10px;
 }
