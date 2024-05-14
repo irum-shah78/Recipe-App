@@ -1,4 +1,5 @@
 const meals = document.getElementById('meals');
+const favContainer = document.getElementById('fav-meals');
 
 getRandomMeal();
 fetchFavMeals();
@@ -9,7 +10,7 @@ async function getRandomMeal() {
   const respData = await resp.json();
   const randomMeal = respData.meals[0];
 
-  console.log(randomMeal);
+  // console.log(randomMeal);
 
   addMeal(randomMeal, true);
 }
@@ -55,7 +56,8 @@ function addMeal(mealData, random = false) {
       addMealLS(mealData.idMeal);
       btn.classList.add("active");
     }
-    // btn.classList.toggle("active");
+    
+    fetchFavMeals();
   });
 
   meals.appendChild(meal);
@@ -81,14 +83,35 @@ function getMealsLS() {
 }
 
 async function fetchFavMeals() {
-  const mealIds = getMealsLS();
+   // clean container first
+   favContainer.innerHTML = '';
 
-  const meals = [];
+  const mealIds = getMealsLS();
 
   for (let i = 0; i < mealIds.length; i++) {
     const mealId = mealIds[i];
-    meal = await getMealById(mealId);
-    meals.push(meal);
+    const meal = await getMealById(mealId);
+
+    addMealFav(meal);
   }
-  console.log(meals);
 }
+
+function addMealFav(mealData) {
+  const favMeal = document.createElement('li');
+
+  favMeal.innerHTML = `
+          <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+          <span>${mealData.strMeal}</span>
+          <button class="clear"><i class="fa-solid fa-xmark"></i></button>
+      `;
+
+  const btn = favMeal.querySelector('.clear');
+
+  btn.addEventListener('click', ()=>{
+    removeMealLS(mealData.idMeal);
+
+    fetchFavMeals();
+  });
+
+  favContainer.appendChild(favMeal);
+};
