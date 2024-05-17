@@ -46,6 +46,7 @@ header button{
   color: rgb(138, 129, 141);
   font-size: 1.5rem;
   margin-left: 10px;
+  cursor: pointer;
 }
 .fav-container{
   background-color: rgb(237, 235, 238);
