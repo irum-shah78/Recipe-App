@@ -136,3 +136,35 @@ padding: 1rem;
 .meal-body .fav-btn:active{
   color: rebeccapurple;
 }
+.meal-info-container{
+  background-color: rgba(0,0,0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.meal-info{
+  padding: 0 2rem;
+  border-radius: 5px;
+  background-color: #fff;
+  max-width: 600px;
+  max-height: 800px;
+  width: 100%;
+}
+.meal-info .title-img{
+  text-align: center;
+}
+.meal-info img{
+  width: 400px;
+}
+.meal-info .close-popup{
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  /* position: absolute; */
+}
