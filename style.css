@@ -5,6 +5,8 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  overflow-x: 0;
+  overflow-y: 0;
 }
 body{
   background-color: whitesmoke;
@@ -136,7 +138,7 @@ padding: 1rem;
 .meal-body .fav-btn:active{
   color: rebeccapurple;
 }
-.meal-info-container{
+.popup-container{
   background-color: rgba(0,0,0, 0.5);
   display: flex;
   align-items: center;
@@ -147,7 +149,12 @@ padding: 1rem;
   bottom: 0;
   top: 0;
 }
-.meal-info{
+.popup-container.hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+.popup{
+  position: relative;
   padding: 0 2rem;
   border-radius: 5px;
   background-color: #fff;
@@ -155,16 +162,18 @@ padding: 1rem;
   max-height: 800px;
   width: 100%;
 }
-.meal-info .title-img{
+.popup .title-img{
   text-align: center;
 }
-.meal-info img{
+.popup img{
   width: 400px;
 }
-.meal-info .close-popup{
+.popup .close-popup{
+  position: absolute;
+  top: .25rem;
+  right: 1rem;
   background-color: transparent;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  /* position: absolute; */
 }
